@@ -1,0 +1,90 @@
+<div class="container">
+
+  <div>
+    <h2>Ajouter un Hôtel :</h2>
+  </div>
+
+  <form>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Hôtel</label>
+
+      <input
+        type="number"
+        [(ngModel)]="newHotel.idHotel"
+        name="idHotel"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Hôtel</label>
+
+      <input
+        type="text"
+        [(ngModel)]="newHotel.nomHotel"
+        name="nomHotel"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Adresse Hôtel</label>
+
+      <input
+        type="text"
+        [(ngModel)]="newHotel.adresseHotel"
+        name="adresseHotel"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Ville</label>
+
+      <input
+        type="text"
+        [(ngModel)]="newHotel.villeHotel"
+        name="villeHotel"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Nombre d'étoiles</label>
+
+      <input
+        type="number"
+        [(ngModel)]="newHotel.nombreEtoiles"
+        name="nombreEtoiles"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Prix/Nuit</label>
+
+      <input
+        type="number"
+        [(ngModel)]="newHotel.prixNuit"
+        name="prixNuit"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date création</label>
+
+      <input
+        type="date"
+        [(ngModel)]="newHotel.dateCreation"
+        name="dateCreation"
+        class="form-control">
+    </div>
+
+    <div class="mt-2">
+      <button
+        type="submit"
+        (click)="addHotel()"
+        class="btn btn-success">
+        Ajouter
+      </button>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+
+      <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>N°</th>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Ville</th>
+            <th>Étoiles</th>
+            <th>Prix/Nuit</th>
+            <th>Date Création</th>
+          </tr>
+        </thead>
+        <tbody>
+           @for (hotel of hotels; track hotel.idHotel;let index = $index  ; let nbr = $count ; let first = $first; let last = $last) {
+            <tr>  
+            <!--@if (first) {
+               <h1>Nombre : {{ nbr }}</h1>
+            }-->
+             <!-- @if (index == 0) {
+                 <h1>Nombre : {{ nbr }}</h1>
+             }-->
+              <td>{{ index }}</td>
+              <td>{{ hotel.idHotel }}</td>
+              <td>{{ hotel.nomHotel }}</td>
+              <td>{{ hotel.adresseHotel }}</td>
+              <td>{{ hotel.villeHotel }}</td>
+              <td>{{ hotel.nombreEtoiles }}</td>
+              <td>{{ hotel.prixNuit }}</td>
+              <td>{{ hotel.dateCreation | date:'dd/MM/yyyy' }}</td>
+            
+            <!--@if (last) {
+                   <h1>Nombre : {{ nbr }}</h1>
+            }-->
+            <td>
+                <a class="btn btn-danger" (click)="supprimerHotel(hotel)"> Supprimer</a>
+            </td>
+            <td>
+              <a class="btn btn-success" [routerLink]="['/updateHotel', hotel.idHotel]">Modifier</a>
+            </td>
+            </tr>
+           }
+            @empty {
+               <h1>Aucun hôtel trouvé !</h1>
+          }
+          </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>

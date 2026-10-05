@@ -1,0 +1,84 @@
+<div class="container">
+  <div>
+    <h2>Modifier un Hôtel :</h2>
+  </div>
+
+  <form>
+
+    <div  class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Hôtel</label>
+      <input 
+        type="number"
+        [(ngModel)]="currentHotel.idHotel"
+        name="idHotel"
+        class="form-control"
+       readonly >
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Hôtel</label>
+      <input
+        type="text"
+        [(ngModel)]="currentHotel.nomHotel"
+        name="nomHotel"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Adresse Hôtel</label>
+      <input
+        type="text"
+        [(ngModel)]="currentHotel.adresseHotel"
+        name="adresseHotel"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Ville</label>
+      <input
+        type="text"
+        [(ngModel)]="currentHotel.villeHotel"
+        name="villeHotel"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Nombre d'étoiles</label>
+      <input
+        type="number"
+        [(ngModel)]="currentHotel.nombreEtoiles"
+        name="nombreEtoiles"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Prix/Nuit</label>
+      <input
+        type="number"
+        [(ngModel)]="currentHotel.prixNuit"
+        name="prixNuit"
+        class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date création</label>
+      <input
+        type="date"
+        [ngModel]="currentHotel.dateCreation | date:'yyyy-MM-dd'"
+        (ngModelChange)="currentHotel.dateCreation = $event"
+        name="dateCreation"
+        class="form-control">
+    </div>
+
+    <div class="mt-2">
+      <button
+        type="submit"
+        (click)="updateHotel()"
+        class="btn btn-success">
+        Modifier
+      </button>
+    </div>
+
+  </form>
+
+</div>
